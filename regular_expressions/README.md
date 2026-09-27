@@ -13,4 +13,4 @@ Each script takes one argument and passes it to a regular expression matching me
 | `5-beginning_and_end.rb` | Task script |
 | `6-phone_number.rb` | Task script |
 | `7-OMG_WHY_ARE_YOU_SHOUTING.rb` | Task script |
-| `100-textme.rb` | Task script |
+| `8-textme.rb` | Task script |
