@@ -2,6 +2,8 @@
 """Recursively collect the titles of all hot posts of a subreddit."""
 import requests
 
+HEADERS = {"User-Agent": "linux:alu.api_advanced:v1.0"}
+
 
 def recurse(subreddit, hot_list=[], after=None):
     """Return a list of all hot post titles, or None if invalid."""
@@ -12,7 +14,7 @@ def recurse(subreddit, hot_list=[], after=None):
     if after:
         params["after"] = after
     try:
-        res = requests.get(url, headers={"User-Agent": "linux:alu.api_advanced:v1.0 (by /u/alu_student)"}, params=params,
+        res = requests.get(url, headers=HEADERS, params=params,
                            allow_redirects=False, timeout=10)
     except Exception:
         return None

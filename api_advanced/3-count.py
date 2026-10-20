@@ -2,6 +2,8 @@
 """Recursively count keywords in the hot post titles of a subreddit."""
 import requests
 
+HEADERS = {"User-Agent": "linux:alu.api_advanced:v1.0"}
+
 
 def count_words(subreddit, word_list, after=None, counts=None):
     """Print a sorted count of the given keywords in hot post titles."""
@@ -14,7 +16,7 @@ def count_words(subreddit, word_list, after=None, counts=None):
     if after:
         params["after"] = after
     try:
-        res = requests.get(url, headers={"User-Agent": "linux:alu.api_advanced:v1.0 (by /u/alu_student)"}, params=params,
+        res = requests.get(url, headers=HEADERS, params=params,
                            allow_redirects=False, timeout=10)
     except Exception:
         return
